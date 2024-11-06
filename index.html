@@ -3,17 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>パララックスページ</title>
+    <title>写真からズームインするパララックスページ</title>
     <style>
-        /* 基本スタイル設定 */
+        /* 基本スタイル */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* 各セクションのスタイル */
-        .section {
+        /* フレーム部分 */
+        .frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            z-index: 10;
+            overflow: hidden;
+            animation: zoomIn 3s forwards;
+        }
+
+        /* 写真の初期状態 */
+        .frame img {
+            width: 50%;
+            transition: transform 3s;
+        }
+
+        /* ズームインアニメーション */
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* フレームが消えた後のパララックス効果 */
+        .parallax {
+            background-image: url('background-image.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -22,68 +59,26 @@
             font-size: 2rem;
             text-align: center;
         }
-
-        /* パララックス背景の設定 */
-        .parallax {
-            background-image: url('large-image.jpg');
-            height: 100vh;
-            background-attachment: fixed; /* 固定背景でパララックス効果 */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* 他のセクションの背景色 */
-        .content {
-            background-color: #333;
-        }
-
-        /* メニューバー */
-        .menu-bar {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            border-radius: 4px;
-            z-index: 10;
-        }
     </style>
 </head>
 <body>
 
-    <!-- メニューバー -->
-    <div class="menu-bar">≡</div>
+    <!-- ズームインフレーム -->
+    <div class="frame">
+        <img src="frame-image.jpg" alt="フレーム画像">
+    </div>
 
     <!-- パララックス背景セクション -->
     <div class="parallax">
-        <h1>パララックス効果</h1>
+        <h1>パララックスページにようこそ</h1>
     </div>
 
-    <!-- スクロール時に表示されるコンテンツセクション -->
-    <div class="section content">
-        <h2>サイトの中身へようこそ</h2>
-        <p>ここにはサイトの詳細な説明やリンク、ボタンなどが配置されています。</p>
-    </div>
-
-    <!-- 別のパララックス背景セクション -->
-    <div class="parallax">
-        <h1>さらにパララックス効果</h1>
-    </div>
-
-    <!-- 追加のコンテンツセクション -->
-    <div class="section content">
-        <h2>もう少しスクロールしてみましょう</h2>
-        <p>さまざまな情報やリンクがここに含まれています。</p>
-    </div>
+    <script>
+        // アニメーションが終わったらフレームを消去
+        document.querySelector('.frame').addEventListener('animationend', function() {
+            this.style.display = 'none';
+        });
+    </script>
 
 </body>
 </html>
