@@ -26,18 +26,19 @@
             z-index: 10;
             overflow: hidden;
             animation: zoomIn 3s forwards;
+            animation-delay: 2s;  /* 2秒の遅延 */
         }
 
         /* 写真の初期状態 */
-        .frame img {
+        .frame img { 
             width: 50%;
             transition: transform 3s;
         }
         
         /* ここで速度を調整 */
         .frame {
-        /* アニメーションの速さを6秒に設定 */
-        animation: zoomIn 6s forwards; 
+            /* アニメーションの速さを6秒に設定 */
+            animation: zoomIn 6s forwards; 
         }
 
         /* ズームインアニメーション */
