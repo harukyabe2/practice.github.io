@@ -1,40 +1,99 @@
-<!DOCTYPE html>　　　<!--HTML文書宣言-->
-<html lang="ja">　　　<!--HTMLタグとページの言語指定-->
-<head>　　　<!--headタグ、ページ内には表示されない情報-->
-    <meta charset="UFT-8">　　　<!--metaタグと文字エンコーディング-->
-    <title>サンプルページ</title>　　　<!--titleタグ、タブでのページのタイトル指定-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レスポンシブデザインページ</title>
+    <style>
+        /* 基本のスタイル設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 全画面背景の設定 */
+        .background {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+            font-size: 3vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 背景画像の不透明度と表示設定 */
+        .background img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        /* 中央の文字 */
+        .background h1 {
+            margin: 0;
+        }
+
+        /* スクロールすると表示される内容 */
+        .content {
+            padding: 2rem;
+            background-color: white;
+            min-height: 100vh;
+        }
+
+        /* メニューバー */
+        .menu-bar {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* レスポンシブな文字サイズ */
+        @media (max-width: 600px) {
+            .background h1 {
+                font-size: 5vw;
+            }
+        }
+    </style>
 </head>
 <body>
-  <p>段落</p>
-  <h1>大</h1>
-  <a href="https://portal.keio.jp/koid/">クリック</a>
-  <img src="image.jpg" alt="画像なし">
-  <ul>
-    <li>あ</li>
-    <li>か</li>
-    <li>さ</li>
-  </ul>
-  <p>テキスト<br>改行</p>
-  <a href="https://portal.keio.jp/koid/" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">クリック</a>
-  <!--CSSを直接記述するインラインスタイル-->
-  <p style="margin-bottom: 32px;"></p>
-  <button disabled>無効なボタン</button>
-  <p style="margin-bottom: 32px;"><button onclick="location.reload();">リロード</button></p>
-  <button class="hoverButton">ホバーボタン</button>
 
-  <style>
-  .hoverButton {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  .hoverButton:hover {
-    background-color: #0056b3;
-  }
-  </style>
+    <!-- メニューバー -->
+    <div class="menu-bar">≡</div>
+
+    <!-- 全画面の背景画像とテキスト -->
+    <div class="background">
+        <picture>
+            <source media="(max-width: 600px)" srcset="small-image.jpg">
+            <img src="large-image.jpg" alt="背景画像">
+        </picture>
+        <h1>ようこそ！</h1>
+    </div>
+
+    <!-- スクロール後のコンテンツ -->
+    <div class="content">
+        <h2>サイトの中身へようこそ</h2>
+        <p>ここにはサイトの詳細な説明や、リンク、ボタンなどが配置されています。</p>
+        <button onclick="alert('ボタンがクリックされました')">ボタンクリック</button>
+    </div>
 
 </body>
 </html>
