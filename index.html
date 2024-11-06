@@ -3,50 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レスポンシブデザインページ</title>
+    <title>スクロールで移動するコンテンツ</title>
     <style>
-        /* 基本のスタイル設定 */
+        /* 基本スタイル設定 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* 全画面背景の設定 */
+        /* 背景の設定 */
         .background {
-            position: relative;
             width: 100%;
             height: 100vh;
-            overflow: hidden;
-            text-align: center;
-            color: white;
-            font-size: 3vw;
+            background-image: url('large-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* 背景を固定 */
             display: flex;
             justify-content: center;
             align-items: center;
+            color: white;
+            font-size: 3vw;
+            text-align: center;
         }
 
-        /* 背景画像の不透明度と表示設定 */
-        .background img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.5;
-            z-index: -1;
-        }
-
-        /* 中央の文字 */
+        /* 背景画像上の文字 */
         .background h1 {
             margin: 0;
+            opacity: 0.8;
         }
 
-        /* スクロールすると表示される内容 */
+        /* スクロールで表示されるコンテンツ */
         .content {
             padding: 2rem;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             min-height: 100vh;
         }
 
@@ -64,9 +55,10 @@
             align-items: center;
             cursor: pointer;
             border-radius: 4px;
+            z-index: 10; /* メニューバーを一番前面に表示 */
         }
 
-        /* レスポンシブな文字サイズ */
+        /* レスポンシブ文字サイズ調整 */
         @media (max-width: 600px) {
             .background h1 {
                 font-size: 5vw;
@@ -88,9 +80,9 @@
         <h1>2024/11/06</h1>
     </div>
 
-    <!-- スクロール後のコンテンツ -->
+    <!-- スクロールで表示されるコンテンツ -->
     <div class="content">
-        <h2>サイトの中身</h2>
+        <h2>サイトの中身へようこそ</h2>
         <p>ここにはサイトの詳細な説明や、リンク、ボタンなどが配置されています。</p>
         <button onclick="alert('ボタンがクリックされました')">ボタンクリック</button>
     </div>
