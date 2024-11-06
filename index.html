@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>固定背景とスクロールボックス</title>
+    <title>パララックスページ</title>
     <style>
         /* 基本スタイル設定 */
         * {
@@ -12,33 +12,32 @@
             box-sizing: border-box;
         }
 
-        /* 全画面の背景設定 */
-        .background {
-            width: 100%;
+        /* 各セクションのスタイル */
+        .section {
             height: 100vh;
-            background-image: url('large-image.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 3vw;
+            font-size: 2rem;
             text-align: center;
-            position: relative;
         }
 
-        /* スクロールで移動する白いボックス */
-        .content-box {
-            background-color: rgba(255, 255, 255, 0.9);
-            width: 80%;
-            max-width: 600px;
-            padding: 2rem;
-            margin-top: -100vh; /* スクロールすると背景の上にボックスが重なる */
-            text-align: center;
-            color: #333;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        /* パララックス背景の設定 */
+        .parallax {
+            background-image: url('large-image.jpg');
+            height: 100vh;
+            background-attachment: fixed; /* 固定背景でパララックス効果 */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 他のセクションの背景色 */
+        .content {
+            background-color: #333;
         }
 
         /* メニューバー */
@@ -55,14 +54,7 @@
             align-items: center;
             cursor: pointer;
             border-radius: 4px;
-            z-index: 10; /* メニューバーを最前面に */
-        }
-
-        /* レスポンシブ文字サイズ調整 */
-        @media (max-width: 600px) {
-            .background h1 {
-                font-size: 5vw;
-            }
+            z-index: 10;
         }
     </style>
 </head>
@@ -71,20 +63,26 @@
     <!-- メニューバー -->
     <div class="menu-bar">≡</div>
 
-    <!-- 全画面の背景画像 -->
-    <div class="background">
-        <picture>
-            <source media="(max-width: 600px)" srcset="small-image.jpg">
-            <img src="large-image.jpg" alt="背景画像">
-        </picture>
-        <h1>2024/11/06</h1>
+    <!-- パララックス背景セクション -->
+    <div class="parallax">
+        <h1>パララックス効果</h1>
     </div>
 
-    <!-- 背景画像上に表示されるコンテンツボックス -->
-    <div class="content-box">
+    <!-- スクロール時に表示されるコンテンツセクション -->
+    <div class="section content">
         <h2>サイトの中身へようこそ</h2>
-        <p>ここにはサイトの詳細な説明や、リンク、ボタンなどが配置されています。</p>
-        <button onclick="alert('ボタンがクリックされました')">ボタンクリック</button>
+        <p>ここにはサイトの詳細な説明やリンク、ボタンなどが配置されています。</p>
+    </div>
+
+    <!-- 別のパララックス背景セクション -->
+    <div class="parallax">
+        <h1>さらにパララックス効果</h1>
+    </div>
+
+    <!-- 追加のコンテンツセクション -->
+    <div class="section content">
+        <h2>もう少しスクロールしてみましょう</h2>
+        <p>さまざまな情報やリンクがここに含まれています。</p>
     </div>
 
 </body>
