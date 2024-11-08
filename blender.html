@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Blender</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <div class="img-item">
+                <img src="image1.jpg" alt="放課後の教室" class="gallery-image">
+            </div>
+            <p>放課後の教室</p>
+        </div>
+        <div class="gallery-item">
+            <div class="img-item">
+                <img src="image2.jpg" alt="公衆電話" class="gallery-image">
+            </div>
+            <p>公衆電話</p>
+        </div>
+        <div class="gallery-item">
+            <div class="img-item">
+                <img src="image3.jpg" alt="ベンチ" class="gallery-image">
+            </div>
+            <p>ベンチ</p>
+        </div>
+    </div>
+
+    <!-- モーダルのHTML -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image" alt="">
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
