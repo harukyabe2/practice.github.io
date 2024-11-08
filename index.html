@@ -6,15 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--width=device-widthで表示領域の幅をデバイスに合わせる-->
     <!--initial-scale=1.0で初期表示の拡大率を100%にしている-->
-    <link rel="stylesheet" href="style.css">   <!--CSSとリンク-->
+    <link rel="stylesheet" href="styles.css">   <!--CSSとリンク-->
     <style>
-        /*すべての要素に対して指定する*/
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;   /*paddingやborderをwidthに含める*/
-        }
-
         /*各セクションのスタイル*/
         .section {
             height: 30vh;
@@ -24,6 +17,9 @@
             color: black;
             font-size: 2rem;
             text-align: center;
+            margin: 10;
+            padding: 0;
+            box-sizing: border-box;   /*paddingやborderをwidthに含める*/
         }
 
         /*パララックス背景の設定*/
@@ -36,6 +32,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;   /*paddingやborderをwidthに含める*/
+
         }
 
         /* 他のセクションの背景色 */
@@ -73,7 +73,8 @@
 
     <!--スクロール時に表示されるコンテンツセクション-->
     <div class="section content">
-        <h2>サイトの中身</h2><br>
+        <h2>Profile</h2>
+        <br>
         <p>ここには説明やリンク、ボタンなどが配置</p>
     </div>
 
