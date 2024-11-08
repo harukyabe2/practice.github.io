@@ -1,3 +1,7 @@
+h2 {
+    margin-left: 1rem;
+}
+
 .work-cards {
     display: flex;
     justify-content: space-around;
@@ -37,6 +41,8 @@
 .work-button:hover {
     background-color: #5a0cac;
 }
+
+
 
 .gallery {
     display: flex;
