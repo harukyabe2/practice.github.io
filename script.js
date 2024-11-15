@@ -1,7 +1,6 @@
 //各画像とモーダル要素を取得
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-image");
-const captionText = document.getElementById("caption");
 const closeBtn = document.getElementsByClassName("close")[0];
 
 //画像をクリックしたときにモーダルを表示
