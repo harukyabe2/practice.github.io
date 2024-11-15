@@ -9,7 +9,6 @@ document.querySelectorAll('.gallery-image').forEach(image => {
     image.onclick = function() {
         modal.style.display = "flex";
         modalImg.src = this.src; //クリックされた画像のパスをモーダル画像に設定
-        captionText.innerText = this.alt; //画像のaltテキストをキャプションに表示
     }
 });
 
