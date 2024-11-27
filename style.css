@@ -154,7 +154,7 @@ h2サイズの見出しに左余白を追加する
 .modal-content {
     margin: auto;
     display: block;
-    width: 100%;
+    width: 70%;
     height: auto;
 }
 /*
