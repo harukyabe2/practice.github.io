@@ -9,22 +9,24 @@ const body = document.body;
 document.querySelectorAll('.gallery-image').forEach(image => {
     image.onclick = function() {
         modal.classList.add('show');
-        modal.style.display = "flex";
+        modal.style.display = "flex"; //モーダルを表示
         modalImg.src = this.src; //クリックされた画像のパスをモーダル画像に設定
         body.style.overflow = "hidden"; //背景スクロールを無効化
-    }
+    };
 });
 
 //モーダルを閉じる
 closeBtn.onclick = function() {
     modal.classList.remove('show');
-    setTimeout(() => modal.style.display = 'none', 300);
-    body.style.overflow = ""; //スクロールを元に戻す
-}
+    modal.style.display = 'none';
+    body.style.overflow = "auto"; //スクロールを元に戻す
+};
 
 //モーダルの背景をクリックしたときに閉じる
 modal.onclick = function(event) {
     if (event.target === modal) {
+        modal.classList.remove('show');
         modal.style.display = "none";
+        body.style.overflow = "auto";
     }
-}
+};
