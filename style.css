@@ -155,7 +155,6 @@ h2サイズの見出しに左余白を追加する
     margin: auto;
     display: block;
     width: 100%;
-    max-width: 1000px;
     height: auto;
 }
 /*
