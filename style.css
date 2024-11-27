@@ -154,8 +154,9 @@ h2サイズの見出しに左余白を追加する
 .modal-content {
     margin: auto;
     display: block;
-    width: 70%;
-    height: auto;
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
 }
 /*
 モーダル内の画像を調整
@@ -163,8 +164,8 @@ h2サイズの見出しに左余白を追加する
 
 @media (max-width: 768px) { /* メディアクエリ */
     .mordal-content {
-        width: 90%;
-        max-width: none;
+        max-width: 90%;
+        max-height: 80vh;
     }
 }
 /*
