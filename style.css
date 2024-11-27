@@ -22,8 +22,8 @@ h2サイズの見出しに左余白を追加する
     margin: 20px;
     padding: 5px;
     text-align: center;
-    max-width: 300px;
-    flex-basis: calc(33% - 40px);
+    max-width: 300px; /* 横幅は最大300px */
+    flex-basis: calc(33% - 40px); /* 親要素の33%-40pxをカードの幅にする */
     box-sizing: border-box;
     text-decoration: none;
     color: inherit;
