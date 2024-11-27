@@ -1,32 +1,32 @@
-//各画像とモーダル要素を取得
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-image");
-const closeBtn = document.getElementsByClassName("close")[0];
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-image");
+    const closeBtn = document.getElementsByClassName("close")[0];
 
-const body = document.body;
+    const body = document.body;
 
-//画像をクリックしたときにモーダルを表示
-document.querySelectorAll('.gallery-image').forEach(image => {
-    image.onclick = function() {
-        modal.classList.add('show');
-        modal.style.display = "flex"; //モーダルを表示
-        modalImg.src = this.src; //クリックされた画像のパスをモーダル画像に設定
-        body.style.overflow = "hidden"; //背景スクロールを無効化
+    document.querySelectorAll('.gallery-image').forEach(image => {
+        image.onclick = function() {
+            modal.classList.add('show');
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+            body.style.overflow = "hidden";
+        };
+    });
+
+    if (closeBtn) { // 要素が存在する場合のみイベントを設定
+        closeBtn.onclick = function() {
+            modal.classList.remove('show');
+            modal.style.display = 'none';
+            body.style.overflow = "auto";
+        };
+    }
+
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.classList.remove('show');
+            modal.style.display = "none";
+            body.style.overflow = "auto";
+        }
     };
 });
-
-//モーダルを閉じる
-closeBtn.onclick = function() {
-    modal.classList.remove('show');
-    modal.style.display = 'none';
-    body.style.overflow = "auto"; //スクロールを元に戻す
-};
-
-//モーダルの背景をクリックしたときに閉じる
-modal.onclick = function(event) {
-    if (event.target === modal) {
-        modal.classList.remove('show');
-        modal.style.display = "none";
-        body.style.overflow = "auto";
-    }
-};
