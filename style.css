@@ -1,13 +1,19 @@
 h2 {
     margin-left: 1rem;
 }
+/*
+h2サイズの見出しに左余白を追加する
+*/
 
 .work-cards {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* 画面サイズが小さい場合は改行 */
     margin: 20px;
 }
+/*
+.work-cardをフレックスボックスで横並びで均等に配置
+*/
 
 .work-card {
     background-color: #fff;
@@ -23,49 +29,48 @@ h2 {
     color: inherit;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* フレックスボックスで内容を縦並びにする */
     align-items: center;
     cursor: pointer;
 }
+/*
+カードの背景色、ボックスシャドウ、余白、パディング、テキスト配置を指定
+クリックしたときのアニメーションを追加
+*/
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* メディアクエリ */
     .work-card {
         flex-basis: calc(50% - 40px);
     }
 }
+/*
+画面幅が768px以下ならカードの幅を50%に縮小
+*/
 
 @media (max-width: 480px) {
     .work-card {
         flex-basis: calc(100% - 40px);
     }
 }
+/*
+画面幅が480px以下ならカードの幅を100%にして1列表示
+*/
 
 .work-image {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
-
-/* .work-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #6a0dad;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-} */
-
-/* .work-button:hover {
-    background-color: #5a0cac;
-} */
+/*
+カード内に表示される画像を調節
+*/
 
 .work-card:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
+/*
+*/
 
 .gallery {
     display: flex;
@@ -73,6 +78,9 @@ h2 {
     justify-content: space-around;
     margin: 20px;
 }
+/*
+フレックスボックスで画像ギャラリーのレイアウトを横並びにして余白を追加
+*/
 
 .gallery-item {
     margin: 10px;
@@ -83,6 +91,10 @@ h2 {
     flex-direction: column;
     align-items: center;
 }
+/*
+ギャラリー内の各画像アイテムの枠
+アイテムを中央揃えにしてテキストを画像の下に表示
+*/
 
 .img-item {
     background-color: #000;
@@ -93,6 +105,10 @@ h2 {
     align-items: center;
     margin-bottom: 10px;
 }
+/*
+画像を表示する枠
+背景を黒くしてサイズを一定にする
+*/
 
 .gallery-image {
     max-width: 100%;
@@ -101,14 +117,17 @@ h2 {
     cursor: pointer;
     transition: transform 0.2s;
 }
+/*
+各画像を調整する
+ホバー時に拡大アニメーション
+*/
 
 .gallery-image:hover {
     transform: scale(1.1);
 }
 
-/* モーダルのスタイル */
 .modal {
-    display: none;
+    display: none; /* 初期状態は非表示 */
     position: fixed;
     z-index: 1000;
     padding-top: 60px;
@@ -122,6 +141,10 @@ h2 {
     transition: opacity 0.3s ease;
     /* モーダル表示時のfade in, fade out */
 }
+/*
+背景全体に暗いオーバーレイを表示する
+.showクラスが追加されると表示される
+*/
 
 .modal.show {
     display: flex;
@@ -134,17 +157,9 @@ h2 {
     width: 80%;
     max-width: 700px;
 }
-
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
+/*
+モーダル内の画像を調整
+*/
 
 .close {
     position: absolute;
@@ -155,6 +170,10 @@ h2 {
     font-weight: bold;
     transition: 0.3s;
 }
+/*
+モーダルを閉じるボタンを右上に配置
+ホバー時に色が変わる
+*/
 
 .close:hover,
 .close:focus {
