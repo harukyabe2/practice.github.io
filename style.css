@@ -32,7 +32,7 @@ h2サイズの見出しに左余白を追加する
     flex-direction: column; /* フレックスボックスで内容を縦並びにする */
     align-items: center;
     cursor: pointer;
-    height: 400px; /* カードの高さを固定 */
+    height: 600px; /* カードの高さを固定 */
     justify-content: space-between; /* 画像と文字を上下に配置 */
 }
 /*
