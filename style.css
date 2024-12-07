@@ -60,7 +60,7 @@ h2サイズの見出しに左余白を追加する
 
 .work-image {
     width: 100%; /* 横幅はカード内に収まる */
-    max-height: 70%; /* 高さをカード全体の70%に制限 */
+    max-height: 80%; /* 高さをカード全体の70%に制限 */
     object-fit: contain; /* 画像を縦横比を保ちながら中央に配置 */
     border-radius: 5px;
     margin: auto;
